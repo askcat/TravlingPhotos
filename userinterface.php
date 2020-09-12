@@ -41,7 +41,7 @@
 					<div class="swiper-slide">
 						<div class="content-slide" >
 							<div align="center">
-								<button onclick="window.location.href='jingweidu.php'" style="width:280px; height:30px;">
+								<button onclick="window.location.href='map.php'" style="width:280px; height:30px;">
 									获取位置
 								</button>
 							</div>

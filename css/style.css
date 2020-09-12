@@ -63,25 +63,22 @@ a {
   letter-spacing: 2px;
   margin-top: 2%;
 }
-.form-group{
+.form-group {
   padding: 5%;
 }
-
-.form-group .form-item{
+.form-group .form-item {
   border-bottom: 1px #ffffff solid;
   margin-top: 5%;
 }
-
-.form-group .form-item input{
+.form-group .form-item input {
   outline: none;
   border: 0;
   background-color: transparent;
   color: #ffffff;
   height: 40px;
-  width: 18px;
+  font-size: 18px;
   width: 55%;
   margin-left: 12%;
-  font-size: 16px; 
 }
 .form-group .form-item input::-webkit-input-placeholder {
   /* WebKit browsers */
@@ -103,10 +100,20 @@ a {
   color: #ffffff;
   font-size: 16px;
 }
-.form-group .form-item label img{
+.form-group .form-item label img {
   width: 25px;
   position: absolute;
   margin-top: 2%;
+}
+.form-group .form-item button {
+  outline: none;
+  background: transparent;
+  border: 1px #00cc99 dashed;
+  color: #ffffff;
+  height: 30px;
+  border-radius: 5px;
+  float: right;
+  padding: 1%;
 }
 /* 登录注册按钮 */
 .button-group{
@@ -133,3 +140,51 @@ a {
   color: #ffffff; /* 这段代码需要改动，感觉可以不用<a>标签 */
 }
 /* 主页css结束 */
+/* 注册页面开始 */
+.bg-register {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+}
+.register-header {
+  padding: 5%;
+}
+.register-header a {
+  font-size: 20px;
+  color: #f2f2f2;
+  font-weight: bold;
+}
+.register-header a span {
+  font-size: 18px;
+  margin-left: 2%;
+}
+.authorization {
+  padding: 0 5%;
+  font-size: 14px;
+}
+.authorization input {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  margin-left: 6%;
+}
+.protocol {
+  color: #00cc99;
+  text-decoration: underline;
+}
+.ml-5 {
+  margin-left: 13%;
+}
+.go-login {
+  padding: 5%;
+}
+.go-login a {
+  color: #ffffff;
+  float: right;
+}
+.tourism {
+  padding: 5%;
+}
+.tourism img {
+  margin-left: 10%;
+  margin-top: 20%;
+}

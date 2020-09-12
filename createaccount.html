@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>注册</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-register">
+	<div class="register-contain">
+		<div class="register-header">
+			<a href="javascript:back();"> < <span>注册</span></a>
+		</div>
+		<div class="form-group">
+			<form method="post" action="register.php">
+				<div class="form-item">
+					<input name="newaccountname" title="请输入用户名" maxlength="320"  placeholder="用户名" />
+				</div>
+				<div class="form-item">
+					<input name="newpassword" title="请输入密码" maxlength="320" placeholder="密码" />
+				</div>
+				<div class="form-item">
+					<input name="yourname" title="您的名字" maxlength="320" placeholder="您的名字" />
+				</div>
+				<div class="form-item">
+					<input name="mail" title="请输入电子邮箱" placeholder="邮箱" />
+				</div>
+				<div class="button-group">
+					<button class="login-btn">注册</button>
+				</div>
+				
+			</form>
+		</div>
+		<div class="authorization">
+            <input type="checkbox">
+            <span class="ml-5">注册使用即表示同意</span>
+            <span class="protocol">用户协议及版权声明</span>
+        </div>
+        <div class="go-login">
+            <a href="index.html">已经有账号？去登录</a>
+        </div>
+	</div>
+<script src="js/index.js"></script>
+</body>
+</html>

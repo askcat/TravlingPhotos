@@ -7,21 +7,16 @@ $gender = $_POST['gender'];
 $mail = $_POST['mail'];
 if ($name == "") {
 	//echo "Please fill in account name";
-	echo "<script type='text/javascript'>alert('请填写用户名');location='Createaccount.php';</script>";
+	echo "<script type='text/javascript'>alert('请填写用户名');location='createaccount.php';</script>";
 } elseif ($password == "") {
 
-	//echo "Please fill in password<br><a href='Createaccount.php'>return</a>";
-	echo "<script type='text/javascript'>alert('请填写密码');location='Createaccount.php';</script>";
-
-} elseif ($gender == "") {
-
-	//echo "Please fill in password<br><a href='Createaccount.php'>return</a>";
-	echo "<script type='text/javascript'>alert('请选择性别（男或女）');location='Createaccount.php';</script>";
+	//echo "Please fill in password<br><a href='createaccount.php'>return</a>";
+	echo "<script type='text/javascript'>alert('请填写密码');location='createaccount.php';</script>";
 
 } elseif ($mail == "") {
 
-	//echo "Please fill in password<br><a href='Createaccount.php'>return</a>";
-	echo "<script type='text/javascript'>alert('请填写电子邮箱');location='Createaccount.php';</script>";
+	//echo "Please fill in password<br><a href='createaccount.php'>return</a>";
+	echo "<script type='text/javascript'>alert('请填写电子邮箱');location='createaccount.php';</script>";
 
 } else {
 	if ($name) {
@@ -32,9 +27,9 @@ if ($name == "") {
 
 	}
 	if (($colum['Username'] == $name)) {
-		echo "<script type='text/javascript'>alert('用户名已存在');location='Createaccount.php';</script>";
+		echo "<script type='text/javascript'>alert('用户名已存在');location='createaccount.php';</script>";
 	} elseif (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-		echo "<script type='text/javascript'>alert('不是正确的电子邮箱');location='Createaccount.php';</script>";
+		echo "<script type='text/javascript'>alert('不是正确的电子邮箱');location='createaccount.php';</script>";
 	} else {
 
 		$sql = "INSERT INTO customer (Username,Password,Gender,eMail)
