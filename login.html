@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>登录</title>
+	<link rel="stylesheet" href="css/style.css">		
+</head>
+
+<body class="login-bg">		
+	<div class="login-contain">
+		<div class="login-header">
+			<p>欢迎登录</p>
+		</div>
+		<div class="login-logo" align="center">
+			<img src="img/login.jpg" alt="">
+			<p>记录你的美</p>
+		</div>
+		<div class="form-group">
+			<form method="post" action="check.php">
+				<div class="form-item">
+					<label for="user">
+						<img src="img/user.png" alt="">
+					</label>
+					<input name="accountname" type="test" placeholder="请输入账号" />
+				</div>
+				<div class="form-item">
+					<label for="key">
+						<img src="img/key.png" alt="">
+					</label>
+					<input name="password" type="password" placeholder="请输入密码" />
+				</div>
+				<div class="button-group">
+					<button class="login-btn">登录</button>
+					<!-- 注册跳转自己无法实现，只能用a标签 -->
+
+				</div>
+				
+			</form>
+			<div class="button-group">
+				<!-- 注册跳转自己无法实现，只能用a标签 -->
+				<button class="login-register"><a href="register.html">注册</a></button>
+			</div>
+				
+		</div>
+	</div>
+	<script src="js.index.js"></script>
+</body>
+
+</html>

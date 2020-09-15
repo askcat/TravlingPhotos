@@ -3,48 +3,63 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>登录</title>
-	<link rel="stylesheet" href="css/style.css">		
+	<title>旅游拍照</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <link rel="stylesheet" href="css/index.css">
 </head>
-
-<body class="login-bg">		
-	<div class="login-contain">
-		<div class="login-header">
-			<p>欢迎登录</p>
-		</div>
-		<div class="login-logo" align="center">
-			<img src="img/login.jpg" alt="">
-			<p>记录你的美</p>
-		</div>
-		<div class="form-group">
-			<form method="post" action="check.php">
-				<div class="form-item">
-					<label for="user">
-						<img src="img/user.png" alt="">
-					</label>
-					<input name="accountname" type="test" placeholder="请输入账号" />
-				</div>
-				<div class="form-item">
-					<label for="key">
-						<img src="img/key.png" alt="">
-					</label>
-					<input name="password" type="password" placeholder="请输入密码" />
-				</div>
-				<div class="button-group">
-					<button class="login-btn">登录</button>
-					<!-- 注册跳转自己无法实现，只能用a标签 -->
-
-				</div>
-				
-			</form>
-			<div class="button-group">
-				<!-- 注册跳转自己无法实现，只能用a标签 -->
-				<button class="login-register"><a href="createaccount.html">注册</a></button>
-			</div>
-				
-		</div>
-	</div>
-	<script src="js.index.js"></script>
+<body>
+    <!--页头区域-->
+    <div class="header">
+        <h1>Travling Photos</h1>
+    </div>
+    <!--页头区域结束-->
+    <!-- 地图 -->
+	<div id='container'></div>
+	<div>
+    	<p id='result'></p><hr>
+    </div>
+    <!-- 地图结束 -->
+    <!-- 底部 -->
+    <div  class="appFoot">
+        <a  href="#/" class="router-link-exact-active router-link-active on">
+            <span  style="padding-bottom: 7px">首页</span></a>
+        <a  href="./php/scan.php" class="">
+            <div class="main">
+                <div class="g_wrap">≡打卡</div>
+            </div></a>
+        <a  href="#/more" class="">
+            <span  style="padding-bottom: 7px">我</span></a>
+    </div>
+    <!-- 底部结束 -->
+	<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=c851d0c215fce136033eb4ff073ef8a0"></script>
+	<script type="text/javascript">
+    var map = new AMap.Map('container', {
+        resizeEnable: true
+    });
+    AMap.plugin('AMap.Geolocation', function() {
+        var geolocation = new AMap.Geolocation({
+            enableHighAccuracy: true,//是否使用高精度定位，默认:true
+            timeout: 10000,          //超过10秒后停止定位，默认：5s
+            buttonPosition:'RB',    //定位按钮的停靠位置
+            buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+            zoomToAccuracy: true,   //定位成功后是否自动调整地图视野到定位点
+  
+        });
+        map.addControl(geolocation);
+        geolocation.getCurrentPosition(function(status,result){
+            if(status=='complete'){
+                onComplete(result)
+            }else{
+                onError(result)
+            }
+        });
+    });
+    //解析定位结果
+    function onComplete(data) {
+        var str = [];
+        document.getElementById('result').innerHTML = str.join('<br>');
+    }
+	</script>
 </body>
-
 </html>
