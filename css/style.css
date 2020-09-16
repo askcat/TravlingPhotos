@@ -32,7 +32,7 @@ a {
 .login-bg{
     background-image: url("../img/l-bg.jpeg");
     background-size: cover;
-    /* 看不懂color的作用   应该是文字颜色 */
+    /* 看不懂color的作用 */
     color: #ffffff;
 }
 
@@ -115,10 +115,9 @@ a {
   float: right;
   padding: 1%;
 }
-/* 登录注册按钮  增加了text-align: center; 使按钮居中*/
+/* 登录注册按钮 */
 .button-group{
   padding: 5%;
-  text-align: center;
 }
 .button-group button{
   outline: none;
@@ -179,13 +178,6 @@ a {
   padding: 5%;
 }
 .go-login a {
-  color: #ffffff;
-  float: right;
-}
-.go-signup {
-  padding: 5%;
-}
-.go-signup a {
   color: #ffffff;
   float: right;
 }

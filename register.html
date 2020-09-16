@@ -9,10 +9,10 @@
 <body class="bg-register">
 	<div class="register-contain">
 		<div class="register-header">
-			<a href="index.html"> < <span>返回首页</span></a>
+			<a href="javascript:back();"> < <span>注册</span></a>
 		</div>
 		<div class="form-group">
-			<form method="post" action="./php/register.php">
+			<form method="post" action="register.php">
 				<div class="form-item">
 					<input name="newaccountname" title="请输入用户名" maxlength="320"  placeholder="用户名" />
 				</div>
@@ -25,14 +25,8 @@
 				<div class="form-item">
 					<input name="mail" title="请输入电子邮箱" placeholder="邮箱" />
 				</div>
-				<br>
-				<div align="center">
-					<input type="radio" name="gender" value="男" /> 男
-					<input type="radio" name="gender" value="女"> 女
-				</div>
-				
 				<div class="button-group">
-					<button class="login-btn" type="submit">注册</button>
+					<button class="login-btn">注册</button>
 				</div>
 				
 			</form>
@@ -43,7 +37,7 @@
             <span class="protocol">用户协议及版权声明</span>
         </div>
         <div class="go-login">
-            <a href="login.html">已经有账号？去登录</a>
+            <a href="index.html">已经有账号？去登录</a>
         </div>
 	</div>
 <script src="js/index.js"></script>

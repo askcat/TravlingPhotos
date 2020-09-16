@@ -1,29 +1,53 @@
-<?php require 'checkuser.php' ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <title>打卡</title>
-    <script src="js/scan.js"></script>
+    <style>
+        #fileBtn{
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            width:100px;
+            height:100px;
+        }
+    </style>
 </head>
 <body>
-    <p>open camer demo</p>
-	<form id="take_picture">
-        <input id="btn_camera" type="file" accept="image/*" capture="camera" οnchange="onTake()" />
-	</form>
-	<img id="image" width="300" height="500" />
     
+   <div>
+       <img src="" id="img"  height="500" width="90%"/>
+   </div>
 
-    <div align="center">
-        <form  method="post" action="save.php">
-        <input style="width:280px; height:30px;display:none;" value="" id="image" name="image2" />
-        随 笔<br> 
-        <textarea cols="40" rows="5" id="password" value="" name="description" placeholder="分享一下今天的新鲜事吧！"></textarea>
-        <br>
-        <button type="submit"  style="width:280px; height:30px;">保存照片</button>
-        </form>
-     </div>
-<script src="js/scan.js"></script>
+   <input id="fileBtn" type="file" onchange="upload('#fileBtn', '#img');" accept="image/*" capture="camera" /><br />
+    <!--
+    # 解析
+    # accept 属性（允许上传两种文件类型：gif 和 jpeg）
+    # capture 捕获到系统默认的设备，有三个参数值可设置  camera--照相机； camcorder--摄像机； microphone--录音
+    # js代码我做了封装, 参数一表示 "选择文件" 的 id，参数二表示 "显示图片" 的 id，
+    # 若是 ios 只能调用摄像头，不能选择打开相册的话，就把这个【capture="camera"】去掉，直接加一个属性 multiple
+    -->
+
+    <script>
+        var upload = function (c, d) {
+            "use strict";
+            var $c = document.querySelector(c),
+                $d = document.querySelector(d),
+                file = $c.files[0],
+                reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function (e) {
+                $d.setAttribute("src", e.target.result);
+            };
+        };
+        //# 解析
+        //# 参数在上面 HTML 就已经讲解了，
+        //# file 表示你选中的那个图片，然后它里面有几个属性 name、size、type、slice等，也都非常实用，
+
+        //# FileReader作为文件API的重要成员用于读取文件，根据W3C的定义，FileReader接口提供了读取文件的方法和包含读取结果的事件模型。
+        //# 调用 FileReader 的 readAsDataURL 接口，将启动异步加载文件内容，通过给 reader 监听一个 onload 事件，
+        //# 将数据加载完毕后，在onload事件处理中，通过 event 的 result 属性即可获得文件内容，然后扔进 img 的 src 即可 打开图片并预览。
+    </script>
 </body>
 </html>
