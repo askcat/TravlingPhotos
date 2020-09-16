@@ -1,3 +1,4 @@
+<?php require 'checkuser.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

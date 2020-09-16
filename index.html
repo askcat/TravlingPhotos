@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>旅游拍照</title>
+	<title>TravlingPhotos-旅游拍照</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
     <link rel="stylesheet" href="css/index.css">
@@ -22,13 +22,13 @@
     <!-- 地图结束 -->
     <!-- 底部 -->
     <div  class="appFoot">
-        <a  href="#/" class="router-link-exact-active router-link-active on">
+        <a  href="/" class="router-link-exact-active router-link-active on">
             <span  style="padding-bottom: 7px">首页</span></a>
         <a  href="./php/scan.php" class="">
             <div class="main">
                 <div class="g_wrap">≡打卡</div>
             </div></a>
-        <a  href="#/more" class="">
+        <a  href="./php/checksession.php" class="">
             <span  style="padding-bottom: 7px">我</span></a>
     </div>
     <!-- 底部结束 -->
@@ -44,6 +44,7 @@
             buttonPosition:'RB',    //定位按钮的停靠位置
             buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
             zoomToAccuracy: true,   //定位成功后是否自动调整地图视野到定位点
+			noGeoLocation:1, //禁止手机设备使用浏览器定位 这样就都统一使用ip定位了
   
         });
         map.addControl(geolocation);
